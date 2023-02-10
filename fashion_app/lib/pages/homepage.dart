@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../models/new_arrival.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -102,20 +104,53 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("New Arrival",style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 20.0
-                ),),
-                TextButton(onPressed: () => print("See all"), child: Text("See all",style: GoogleFonts.poppins(
-
-                )))
+                Text(
+                  "New Arrival",
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w600, fontSize: 20.0),
+                ),
+                TextButton(
+                    onPressed: () => print("See all"),
+                    child: Text("See all", style: GoogleFonts.poppins()))
               ],
             ),
           ),
-          
+
           SizedBox(height: 20.0),
           //actual new arrivals
-
+          Container(
+              height: 300.0,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: arrivals.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade300,
+                      borderRadius: BorderRadius.circular(20)
+                    ),
+                    margin: EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Column(
+                      children: [
+                        Image.asset(arrivals[index].imageURL, height: 200, width: 200,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(arrivals[index].name, style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600
+                            ),),
+                            SizedBox(height: 15.0,),
+                            Text(arrivals[index].price.toString(),style: GoogleFonts.poppins(
+                              
+                            )),
+                          ],
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ))
           //most popular banner
 
           //actual most popular
