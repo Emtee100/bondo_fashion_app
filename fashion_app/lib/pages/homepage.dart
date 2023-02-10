@@ -19,6 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
           child: Column(
         children: [
+          const SizedBox(height: 10.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,35 +66,54 @@ class _MyHomePageState extends State<MyHomePage> {
                 return GestureDetector(
                   onTap: () {
                     setState(() {
-                      _selectedIndex == index;
+                      _selectedIndex = index;
                     });
-                    print(_selectedIndex);
                   },
                   child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    margin: const EdgeInsets.symmetric(horizontal: 5.0),
                     padding: const EdgeInsets.all(18),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30.0),
-                      color: _selectedIndex == index
-                          ? Colors.orange.shade700
-                          : Colors.white,
-                      border: _selectedIndex == index? Border.all(color: Colors.orange.shade700):Border.all()
-                    ),
+                        borderRadius: BorderRadius.circular(30.0),
+                        color: _selectedIndex == index
+                            ? Colors.orange.shade700
+                            : Colors.white,
+                        border: _selectedIndex == index
+                            ? Border.all(color: Colors.orange.shade700)
+                            : Border.all()),
                     child: Text(
                       categories[index],
                       style: GoogleFonts.poppins(
-                        color:
-                            _selectedIndex == index ? Colors.white : Colors.black,
+                        color: _selectedIndex == index
+                            ? Colors.white
+                            : Colors.black,
                       ),
                     ),
                   ),
                 );
               },
             ),
-          )
+          ),
+
+          const SizedBox(height: 20.0),
 
           //new arrival banner
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("New Arrival",style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20.0
+                ),),
+                TextButton(onPressed: () => print("See all"), child: Text("See all",style: GoogleFonts.poppins(
 
+                )))
+              ],
+            ),
+          ),
+          
+          SizedBox(height: 20.0),
           //actual new arrivals
 
           //most popular banner
