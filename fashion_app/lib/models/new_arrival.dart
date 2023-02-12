@@ -17,8 +17,8 @@ List<NewArrival> arrivals = [
       name: "Addidas Black Jacket",
       price: 300),
   NewArrival(
-      imageURL: "assets/images/pexels-keen-9286284.jpg",
-      name: "Kinnstom Red Womens Jacket",
+      imageURL: "assets/images/pexels-keen-9286310.jpg",
+      name: "Kinnstorm Red Jacket",
       price: 180),
 
 ];
