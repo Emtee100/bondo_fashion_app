@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../models/new_arrival.dart';
+import '../util/most_popular.dart';
+import '../util/new_arrival.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: const FaIcon(FontAwesomeIcons.bars),
                   ),
                 ),
-      
+
                 //title
                 Text("BRONDO",
                     style: GoogleFonts.poppins(
@@ -96,9 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
             ),
-      
+
             const SizedBox(height: 20.0),
-      
+
             //new arrival banner
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -116,58 +116,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-      
+
             SizedBox(height: 15.0),
+
             //actual new arrivals
-            Container(
-                height: 450.0,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: arrivals.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      height: 20,
-                      // padding: EdgeInsets.only(top: 10, bottom: 10),
-                      decoration: BoxDecoration(
-                          color: Colors.grey.shade100,
-                          borderRadius: BorderRadius.circular(20)),
-                      margin: EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset(arrivals[index].imageURL,
-                                height: 350, width: 240, 
-                                fit: BoxFit.cover
-                                ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                arrivals[index].name,
-                                style: GoogleFonts.poppins(
-                                    fontSize: 18, fontWeight: FontWeight.w600),
-                              ),
-                              SizedBox(
-                                height: 15.0,
-                              ),
-                              Text("\$${arrivals[index].price.toString()}.00",
-                                  style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 18
-                                  )),
-                            ],
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                )),
-              SizedBox(height: 20.0),
+            newArrival(),
+
+            SizedBox(height: 20.0),
             //most popular banner
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -185,57 +140,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 15.0,),
+            SizedBox(
+              height: 15.0,
+            ),
             //actual most popular
-            Container(
-                height: 450.0,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: arrivals.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      height: 20,
-                      // padding: EdgeInsets.only(top: 10, bottom: 10),
-                      decoration: BoxDecoration(
-                          color: Colors.grey.shade100,
-                          borderRadius: BorderRadius.circular(20)),
-                      margin: EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset(arrivals[index].imageURL,
-                                height: 350, width: 240, 
-                                fit: BoxFit.cover
-                                ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                arrivals[index].name,
-                                style: GoogleFonts.poppins(
-                                    fontSize: 18, fontWeight: FontWeight.w600),
-                              ),
-                              SizedBox(
-                                height: 15.0,
-                              ),
-                              Text("\$${arrivals[index].price.toString()}.00",
-                                  style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 18
-                                  )),
-                            ],
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                )),
-                SizedBox(height: 20.0,)
+            most_Popular(),
+            SizedBox(
+              height: 20.0,
+            )
           ],
         )),
       ),
