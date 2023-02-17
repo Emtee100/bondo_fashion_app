@@ -88,24 +88,66 @@ class _arrival1State extends State<arrival1> {
             ),
           ),
           SizedBox(height: 20.0,),
-          Text("Description"),
-          SizedBox(height: 20,),
+          Padding(
+            padding: const EdgeInsets.only(left: 25.0),
+            child: Text("Description", style: GoogleFonts.poppins(
+              color: Colors.grey,
+              fontSize: 15
+            ),),
+          ),
+          SizedBox(height: 25,),
+
+
+          // add to cart container
+
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20.0),
-            height: 90,
+            height: 80,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50.0),
               color: Colors.black
             ),
-            child: Row(
-              children: [
-                Column(
-                  children: [
-                    Text("Price"),
-                    Text("\$ ${arrivals[0].price}.00")
-                  ],
-                )
-              ],
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Price", style: GoogleFonts.poppins(
+                        color: Colors.grey,
+                        fontSize: 12
+                      ),),
+                      Text("\$ ${arrivals[0].price}.00", style: GoogleFonts.poppins(
+                        fontSize: 15,
+                        color: Colors.white,
+                      ),)
+                    ],
+                  ),
+                  GestureDetector(
+                    onTap: () => print("Added to cart"),
+                    child: Container(
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(35),
+                        color: Colors.amber.shade900,
+                      ),
+                      child: Row(
+                        children: [
+                          Text("Add to Cart", style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),),
+                          FaIcon(FontAwesomeIcons.cartArrowDown, color: Colors.white,)
+                        ],
+                      )
+                    ),
+                  )
+                ],
+              ),
             ),
           )
         ]),
