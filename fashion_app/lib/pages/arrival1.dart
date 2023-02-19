@@ -16,9 +16,7 @@ class _arrival1State extends State<arrival1> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Stack(
             children: [
               Container(
@@ -68,35 +66,90 @@ class _arrival1State extends State<arrival1> {
                         icon: FaIcon(FontAwesomeIcons.share)),
                   ),
                 ],
+              ),
+              
+              // images stack
+
+              Positioned(
+                bottom: 100,
+                right: 20,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  height: 200,
+                  width: 60,
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 20.0,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.amber.shade900)),
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(arrivals[0].imageURL,
+                                fit: BoxFit.cover)),
+                        height: 70,
+                        width: 50,
+                      ),
+                      const SizedBox(
+                        height: 20.0,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.amber.shade900)),
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset("assets/images/pexels-keen-9286995.jpg",
+                                fit: BoxFit.cover)),
+                        height: 70,
+                        width: 50,
+                      ),
+                    ],
+                  ),
+                ),
               )
             ],
           ),
-          SizedBox(height: 25.0,),
+          SizedBox(
+            height: 25.0,
+          ),
+
+          // purchase container
 
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(arrivals[0].name, style: GoogleFonts.poppins(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600
-                ),),
-                 IconButton(
-                  onPressed: () => print("liked"), icon: FaIcon(FontAwesomeIcons.heart))
+                Text(
+                  arrivals[0].name,
+                  style: GoogleFonts.poppins(
+                      fontSize: 18, fontWeight: FontWeight.w600),
+                ),
+                IconButton(
+                    onPressed: () => print("liked"),
+                    icon: FaIcon(FontAwesomeIcons.heart))
               ],
             ),
           ),
-          SizedBox(height: 20.0,),
+          SizedBox(
+            height: 20.0,
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 25.0),
-            child: Text("Description", style: GoogleFonts.poppins(
-              color: Colors.grey,
-              fontSize: 15
-            ),),
+            child: Text(
+              "Description",
+              style: GoogleFonts.poppins(color: Colors.grey, fontSize: 15),
+            ),
           ),
-          SizedBox(height: 25,),
-
+          SizedBox(
+            height: 25,
+          ),
 
           // add to cart container
 
@@ -104,9 +157,7 @@ class _arrival1State extends State<arrival1> {
             margin: EdgeInsets.symmetric(horizontal: 20.0),
             height: 80,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50.0),
-              color: Colors.black
-            ),
+                borderRadius: BorderRadius.circular(50.0), color: Colors.black),
             child: Padding(
               padding: const EdgeInsets.only(left: 20.0, right: 10.0),
               child: Row(
@@ -117,34 +168,43 @@ class _arrival1State extends State<arrival1> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Price", style: GoogleFonts.poppins(
-                        color: Colors.grey,
-                        fontSize: 12
-                      ),),
-                      Text("\$ ${arrivals[0].price}.00", style: GoogleFonts.poppins(
-                        fontSize: 15,
-                        color: Colors.white,
-                      ),)
+                      Text(
+                        "Price",
+                        style: GoogleFonts.poppins(
+                            color: Colors.grey, fontSize: 12),
+                      ),
+                      Text(
+                        "\$ ${arrivals[0].price}.00",
+                        style: GoogleFonts.poppins(
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),
+                      )
                     ],
                   ),
                   GestureDetector(
                     onTap: () => print("Added to cart"),
                     child: Container(
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(35),
-                        color: Colors.amber.shade900,
-                      ),
-                      child: Row(
-                        children: [
-                          Text("Add to Cart", style: GoogleFonts.poppins(
-                            color: Colors.white,
-                            fontSize: 15,
-                          ),),
-                          FaIcon(FontAwesomeIcons.cartArrowDown, color: Colors.white,)
-                        ],
-                      )
-                    ),
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(35),
+                          color: Colors.amber.shade900,
+                        ),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Add to Cart",
+                              style: GoogleFonts.poppins(
+                                color: Colors.white,
+                                fontSize: 15,
+                              ),
+                            ),
+                            FaIcon(
+                              FontAwesomeIcons.cartArrowDown,
+                              color: Colors.white,
+                            )
+                          ],
+                        )),
                   )
                 ],
               ),
