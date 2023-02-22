@@ -12,6 +12,7 @@ class arrival1 extends StatefulWidget {
 }
 
 class _arrival1State extends State<arrival1> {
+  late int selectedContainer;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,30 +85,47 @@ class _arrival1State extends State<arrival1> {
                       const SizedBox(
                         height: 20.0,
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.amber.shade900)),
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(arrivals[0].imageURL,
-                                fit: BoxFit.cover)),
-                        height: 70,
-                        width: 50,
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            Border.all(color: Colors.amber.shade900);
+                            arrivals[0].imageURL = "assets/images/pexels-keen-9286988.jpg";
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              
+                              ),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset("assets/images/pexels-keen-9286988.jpg",
+                                  fit: BoxFit.cover)),
+                          height: 70,
+                          width: 50,
+                        ),
                       ),
                       const SizedBox(
                         height: 20.0,
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.amber.shade900)),
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset("assets/images/pexels-keen-9286995.jpg",
-                                fit: BoxFit.cover)),
-                        height: 70,
-                        width: 50,
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            Border.all(color: Colors.amber.shade900);
+                            arrivals[0].imageURL = "assets/images/pexels-keen-9286995.jpg";
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset("assets/images/pexels-keen-9286995.jpg",
+                                  fit: BoxFit.cover)),
+                          height: 70,
+                          width: 50,
+                        ),
                       ),
                     ],
                   ),
