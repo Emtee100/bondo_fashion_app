@@ -33,7 +33,7 @@ class _arrival1State extends State<arrival1> {
                       bottomRight: Radius.circular(25),
                       bottomLeft: Radius.circular(25)),
                   child: Image.asset(
-                    arrivals[0].imageURL,
+                    arrivals[index].imageURL,
                     fit: BoxFit.cover,
                   ),
                 ),

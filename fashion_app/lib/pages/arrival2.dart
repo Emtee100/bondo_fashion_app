@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class arrival2 extends StatefulWidget {
-  const arrival2({super.key});
+  arrival2({super.key});
 
   @override
   State<arrival2> createState() => _arrival2State();

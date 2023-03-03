@@ -29,13 +29,13 @@ class _newArrivalState extends State<newArrival> {
                       onTap: () {
                         switch (index) {
                           case 0:
-                            context.go('/arrival1');
+                            context.go('/arrival1/:$index');
                           break;
                           case 1:
-                            Navigator.push(context, MaterialPageRoute(builder: ((context) => arrival2())));
+                            
                           break;
                           case 2:
-                            Navigator.push(context, MaterialPageRoute(builder: ((context) => arrival3())));
+                            
                           break;
                         }
                       },
