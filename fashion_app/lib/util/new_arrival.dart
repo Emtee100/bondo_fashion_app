@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../models/new_arrival.dart';
@@ -26,12 +27,9 @@ class _newArrivalState extends State<newArrival> {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        setState(() {
-                          _arrivalSelected = index;
-                        });
-                        switch (_arrivalSelected) {
+                        switch (index) {
                           case 0:
-                            Navigator.push(context, MaterialPageRoute(builder: ((context) => arrival1())));
+                            context.go('/arrival1');
                           break;
                           case 1:
                             Navigator.push(context, MaterialPageRoute(builder: ((context) => arrival2())));

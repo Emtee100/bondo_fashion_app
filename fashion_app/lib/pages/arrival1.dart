@@ -5,7 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../models/new_arrival.dart';
 
 class arrival1 extends StatefulWidget {
-  const arrival1({super.key});
+  final int index;
+  arrival1({required this.index});
 
   @override
   State<arrival1> createState() => _arrival1State();
