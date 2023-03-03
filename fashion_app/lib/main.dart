@@ -21,8 +21,7 @@ final GoRouter _router = GoRouter(initialLocation: '/homepage', routes: [
   GoRoute(
     path: '/arrival1/:index',
     builder: (context, state) =>
-          arrival1(index: int.parse(state.params['index']!),),
-  ),
+          arrival1(),),
   // GoRoute(
   //   path: '/arrival2/:index',
   //   builder: (context, state) =>
@@ -57,6 +56,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: _router,
+      // routerDelegate: _router.routerDelegate,
+      // routeInformationParser: _router.routeInformationParser,
+      // routeInformationProvider: _router.routeInformationProvider,
       debugShowCheckedModeBanner: false,
       title: 'Brondo Fashion',
       theme: ThemeData(

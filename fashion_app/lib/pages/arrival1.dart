@@ -5,8 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../models/new_arrival.dart';
 
 class arrival1 extends StatefulWidget {
-  final int index;
-  arrival1({required this.index});
+  arrival1({super.key});
 
   @override
   State<arrival1> createState() => _arrival1State();
@@ -33,7 +32,7 @@ class _arrival1State extends State<arrival1> {
                       bottomRight: Radius.circular(25),
                       bottomLeft: Radius.circular(25)),
                   child: Image.asset(
-                    arrivals[index].imageURL,
+                    arrivals[0].imageURL,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -69,7 +68,7 @@ class _arrival1State extends State<arrival1> {
                   ),
                 ],
               ),
-              
+
               // images stack
 
               Positioned(
@@ -90,17 +89,18 @@ class _arrival1State extends State<arrival1> {
                         onTap: () {
                           setState(() {
                             Border.all(color: Colors.amber.shade900);
-                            arrivals[0].imageURL = "assets/images/pexels-keen-9286988.jpg";
+                            arrivals[0].imageURL =
+                                "assets/images/pexels-keen-9286988.jpg";
                           });
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              
-                              ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
-                              child: Image.asset("assets/images/pexels-keen-9286988.jpg",
+                              child: Image.asset(
+                                  "assets/images/pexels-keen-9286988.jpg",
                                   fit: BoxFit.cover)),
                           height: 70,
                           width: 50,
@@ -113,16 +113,18 @@ class _arrival1State extends State<arrival1> {
                         onTap: () {
                           setState(() {
                             Border.all(color: Colors.amber.shade900);
-                            arrivals[0].imageURL = "assets/images/pexels-keen-9286995.jpg";
+                            arrivals[0].imageURL =
+                                "assets/images/pexels-keen-9286995.jpg";
                           });
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
-                              child: Image.asset("assets/images/pexels-keen-9286995.jpg",
+                              child: Image.asset(
+                                  "assets/images/pexels-keen-9286995.jpg",
                                   fit: BoxFit.cover)),
                           height: 70,
                           width: 50,
