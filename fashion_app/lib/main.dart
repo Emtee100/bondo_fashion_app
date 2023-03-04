@@ -21,7 +21,7 @@ final GoRouter _router = GoRouter(initialLocation: '/homepage', routes: [
   GoRoute(
     path: '/arrival1/:index',
     builder: (context, state) =>
-          arrival1(),),
+          arrival1(index: int.parse(state.params['index']as String)),),
   // GoRoute(
   //   path: '/arrival2/:index',
   //   builder: (context, state) =>

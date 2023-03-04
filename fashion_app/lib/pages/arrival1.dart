@@ -5,7 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../models/new_arrival.dart';
 
 class arrival1 extends StatefulWidget {
-  arrival1({super.key});
+  final int index;
+  arrival1({required this.index});
 
   @override
   State<arrival1> createState() => _arrival1State();
@@ -32,7 +33,7 @@ class _arrival1State extends State<arrival1> {
                       bottomRight: Radius.circular(25),
                       bottomLeft: Radius.circular(25)),
                   child: Image.asset(
-                    arrivals[0].imageURL,
+                    arrivals[index].imageURL,
                     fit: BoxFit.cover,
                   ),
                 ),
