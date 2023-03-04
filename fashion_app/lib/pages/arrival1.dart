@@ -14,6 +14,7 @@ class arrival1 extends StatefulWidget {
 
 class _arrival1State extends State<arrival1> {
   late int selectedContainer;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +34,7 @@ class _arrival1State extends State<arrival1> {
                       bottomRight: Radius.circular(25),
                       bottomLeft: Radius.circular(25)),
                   child: Image.asset(
-                    arrivals[index].imageURL,
+                    arrivals[widget.index].imageURL,
                     fit: BoxFit.cover,
                   ),
                 ),
