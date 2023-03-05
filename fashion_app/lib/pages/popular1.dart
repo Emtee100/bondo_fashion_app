@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class popular1 extends StatefulWidget {
-  const popular1({super.key});
+  final int index;
+  popular1({required this.index});
 
   @override
   State<popular1> createState() => _popular1State();
