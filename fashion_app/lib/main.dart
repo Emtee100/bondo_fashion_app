@@ -21,32 +21,32 @@ final GoRouter _router = GoRouter(initialLocation: '/homepage', routes: [
   GoRoute(
     path: '/arrival1/:index',
     builder: (context, state) =>
-          arrival1(index: int.parse(state.params['index']as String)),),
-  // GoRoute(
-  //   path: '/arrival2/:index',
-  //   builder: (context, state) =>
-  //        arrival2(index: int.parse(state.params['index']!),),
-  // ),
-  // GoRoute(
-  //   path: '/arrival3/:index',
-  //   builder: (context, state) =>
-  //        arrival3(index: int.parse(state.params['index']!)),
-  // ),
-  // GoRoute(
-  //   path: '/popular1/:index',
-  //   builder: (context, state) =>
-  //        popular1(index: int.parse(state.params['index']!)),
-  // ),
-  // GoRoute(
-  //   path: '/popular2/:index',
-  //   builder: (context, state) =>
-  //       const popular2(index: int.parse(state.params['index']!)),
-  // ),
-  // GoRoute(
-  //   path: '/popular3/:index',
-  //   builder: (context, state) =>
-  //       const popular3(index: int.parse(state.params['index'])),
-  // ),
+          arrival1(index: int.parse(state.params['index']!)),),
+  GoRoute(
+    path: '/arrival2/:index',
+    builder: (context, state) =>
+         arrival2(index: int.parse(state.params['index']!),),
+  ),
+  GoRoute(
+    path: '/arrival3/:index',
+    builder: (context, state) =>
+         arrival3(index: int.parse(state.params['index']!)),
+  ),
+  GoRoute(
+    path: '/popular1/:index',
+    builder: (context, state) =>
+         popular1(index: int.parse(state.params['index']!)),
+  ),
+  GoRoute(
+    path: '/popular2/:index',
+    builder: (context, state) =>
+        const popular2(index: int.parse(state.params['index']!)),
+  ),
+  GoRoute(
+    path: '/popular3/:index',
+    builder: (context, state) =>
+        const popular3(index: int.parse(state.params['index'])),
+  ),
 ]);
 
 class MyApp extends StatelessWidget {

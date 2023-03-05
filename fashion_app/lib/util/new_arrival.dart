@@ -29,7 +29,8 @@ class _newArrivalState extends State<newArrival> {
                       onTap: () {
                         switch (index) {
                           case 0:
-                            context.go('/arrival1/:$index');
+                            // final selectedIndex = index.toString();
+                            context.go('/arrival1/$index');
                           break;
                           case 1:
                             
