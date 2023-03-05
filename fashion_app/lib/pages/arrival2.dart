@@ -63,7 +63,7 @@ class _arrival2State extends State<arrival2> {
                     ),
                     child: IconButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          context.go('/homepage');
                         },
                         icon: FaIcon(FontAwesomeIcons.share)),
                   ),
@@ -90,8 +90,8 @@ class _arrival2State extends State<arrival2> {
                         onTap: () {
                           setState(() {
                             Border.all(color: Colors.amber.shade900);
-                            arrivals[0].imageURL =
-                                "assets/images/pexels-keen-9286988.jpg";
+                            arrivals[widget.index].imageURL =
+                                "assets/images/adihb9512_cblack_10.jpg";
                           });
                         },
                         child: Container(
@@ -101,7 +101,7 @@ class _arrival2State extends State<arrival2> {
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: Image.asset(
-                                  "assets/images/pexels-keen-9286988.jpg",
+                                  "assets/images/adihb9512_cblack_10.jpg",
                                   fit: BoxFit.cover)),
                           height: 70,
                           width: 50,
@@ -114,8 +114,8 @@ class _arrival2State extends State<arrival2> {
                         onTap: () {
                           setState(() {
                             Border.all(color: Colors.amber.shade900);
-                            arrivals[0].imageURL =
-                                "assets/images/pexels-keen-9286995.jpg";
+                            arrivals[widget.index].imageURL =
+                                "assets/images/adihb9512_cblack_10.jpg";
                           });
                         },
                         child: Container(
@@ -125,7 +125,7 @@ class _arrival2State extends State<arrival2> {
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: Image.asset(
-                                  "assets/images/pexels-keen-9286995.jpg",
+                                  "assets/images/adihb9512_cblack_10.jpg",
                                   fit: BoxFit.cover)),
                           height: 70,
                           width: 50,
@@ -149,7 +149,7 @@ class _arrival2State extends State<arrival2> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  arrivals[0].name,
+                  arrivals[widget.index].name,
                   style: GoogleFonts.poppins(
                       fontSize: 18, fontWeight: FontWeight.w600),
                 ),
@@ -196,7 +196,7 @@ class _arrival2State extends State<arrival2> {
                             color: Colors.grey, fontSize: 12),
                       ),
                       Text(
-                        "\$ ${arrivals[0].price}.00",
+                        "\$ ${arrivals[widget.index].price}.00",
                         style: GoogleFonts.poppins(
                           fontSize: 15,
                           color: Colors.white,

@@ -33,10 +33,10 @@ class _newArrivalState extends State<newArrival> {
                             context.go('/arrival1/$index');
                           break;
                           case 1:
-                            
+                            context.go('/arrival2/$index');
                           break;
                           case 2:
-                            
+                            context.go('/arrival3/$index');
                           break;
                         }
                       },
