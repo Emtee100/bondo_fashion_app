@@ -29,26 +29,26 @@ class _most_PopularState extends State<most_Popular> {
                         setState(() {
                           _popularSelected = index;
                         });
-                        switch (_popularSelected) {
-                          case 0:
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: ((context) => popular1())));
-                            break;
-                          case 1:
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: ((context) => popular2())));
-                            break;
-                          case 2:
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: ((context) => popular3())));
-                            break;
-                        }
+                        // switch (_popularSelected) {
+                        //   case 0:
+                        //     Navigator.push(
+                        //         context,
+                        //         MaterialPageRoute(
+                        //             builder: ((context) => popular1())));
+                        //     break;
+                        //   case 1:
+                        //     Navigator.push(
+                        //         context,
+                        //         MaterialPageRoute(
+                        //             builder: ((context) => popular2())));
+                        //     break;
+                        //   case 2:
+                        //     Navigator.push(
+                        //         context,
+                        //         MaterialPageRoute(
+                        //             builder: ((context) => popular3())));
+                        //     break;
+                        // }
                       },
                       child: Container(
                         decoration: BoxDecoration(

@@ -1,8 +1,8 @@
-class NewArrival {
-  String imageURL;
-  String name;
-  int price;
-  NewArrival({required this.imageURL, required this.name, required this.price});
+import 'clothes.dart';
+
+class NewArrival extends Clothes {
+  NewArrival(
+      {required super.imageURL, required super.name, required super.price});
 }
 
 List<NewArrival> arrivals = [
@@ -18,5 +18,4 @@ List<NewArrival> arrivals = [
       imageURL: "assets/images/pexels-keen-9286310.jpg",
       name: "Kinnstorm Red Jacket",
       price: 180),
-
 ];

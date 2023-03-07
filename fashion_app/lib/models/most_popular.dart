@@ -1,13 +1,7 @@
-class Popular {
-  String imageURL;
-  String name;
-  int price;
+import 'clothes.dart';
 
-  Popular({
-    required this.imageURL,
-    required this.name,
-    required this.price,
-  });
+class Popular extends Clothes {
+  Popular({required super.imageURL, required super.name, required super.price});
 }
 
 List<Popular> mostPopular = [
