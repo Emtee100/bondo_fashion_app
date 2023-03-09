@@ -92,7 +92,7 @@ class _arrival1State extends State<arrival1> {
                         onTap: () {
                           setState(() {
                             Border.all(color: Colors.amber.shade900);
-                            arrivals[0].imageURL =
+                            arrivals[widget.index].imageURL =
                                 "assets/images/pexels-keen-9286988.jpg";
                           });
                         },
@@ -116,7 +116,7 @@ class _arrival1State extends State<arrival1> {
                         onTap: () {
                           setState(() {
                             Border.all(color: Colors.amber.shade900);
-                            arrivals[0].imageURL =
+                            arrivals[widget.index].imageURL =
                                 "assets/images/pexels-keen-9286995.jpg";
                           });
                         },
@@ -151,7 +151,7 @@ class _arrival1State extends State<arrival1> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  arrivals[0].name,
+                  arrivals[widget.index].name,
                   style: GoogleFonts.poppins(
                       fontSize: 18, fontWeight: FontWeight.w600),
                 ),
@@ -198,7 +198,7 @@ class _arrival1State extends State<arrival1> {
                             color: Colors.grey, fontSize: 12),
                       ),
                       Text(
-                        "\$ ${arrivals[0].price}.00",
+                        "\$ ${arrivals[widget.index].price}.00",
                         style: GoogleFonts.poppins(
                           fontSize: 15,
                           color: Colors.white,
