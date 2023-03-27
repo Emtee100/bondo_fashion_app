@@ -14,8 +14,8 @@ class arrival1 extends StatefulWidget {
 }
 
 class _arrival1State extends State<arrival1> {
-  late int selectedContainer;
-  
+  bool favorite = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -156,8 +156,14 @@ class _arrival1State extends State<arrival1> {
                       fontSize: 18, fontWeight: FontWeight.w600),
                 ),
                 IconButton(
-                    onPressed: () => print("liked"),
-                    icon: FaIcon(FontAwesomeIcons.heart))
+                    onPressed: () {
+                      setState(() {
+                        favorite = !favorite;
+                      });
+                    },
+                    icon: favorite
+                        ? const Icon(Icons.favorite)
+                        : const Icon(Icons.favorite_border_outlined))
               ],
             ),
           ),
