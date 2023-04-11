@@ -19,7 +19,7 @@ final GoRouter _router = GoRouter(initialLocation: '/homepage', routes: [
     builder: (context, state) => const MyHomePage(),
   ),
   GoRoute(
-    path: '/arrival1/:index/:tag',
+    path: '/arrival1/:index',
     builder: (context, state) =>
           arrival1(index: int.parse(state.params['index']!)),),
   GoRoute(

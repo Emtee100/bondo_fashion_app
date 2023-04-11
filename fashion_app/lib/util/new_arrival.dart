@@ -30,7 +30,7 @@ class _newArrivalState extends State<newArrival> {
                 switch (index) {
                   case 0:
                     // final selectedIndex = index.toString();
-                    context.go('/arrival1/$index/image$index');
+                    context.go('/arrival1/$index');
                     break;
                   case 1:
                     context.go('/arrival2/$index');
